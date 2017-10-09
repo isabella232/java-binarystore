@@ -14,22 +14,17 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.namics.oss.java.tools</groupId>
+			<artifactId>java-tools</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.namics.commons.utils</groupId>
-			<artifactId>namics-utils</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.namics.oss</groupId>
-			<artifactId>java-random</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -51,6 +46,11 @@
 		<dependency>
 			<groupId>com.shazam</groupId>
 			<artifactId>shazamcrest</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<artifactId>commons-io</artifactId>
+			<groupId>commons-io</groupId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

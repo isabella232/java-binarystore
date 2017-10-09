@@ -22,8 +22,8 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.Supplier;
 
-import static com.namics.commons.utils.Assert.isTrue;
-import static com.namics.commons.utils.Assert.notNull;
+import static com.namics.oss.java.tools.utils.Assert.isTrue;
+import static com.namics.oss.java.tools.utils.Assert.notNull;
 import static java.util.Collections.emptySet;
 import static java.util.stream.Collectors.toSet;
 

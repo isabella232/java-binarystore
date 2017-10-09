@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import static com.namics.commons.utils.Assert.notNull;
+import static com.namics.oss.java.tools.utils.Assert.notNull;
 
 /**
  * File system stored binary.
