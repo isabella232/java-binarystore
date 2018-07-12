@@ -21,7 +21,7 @@ Main intention is to provide a simple interface with multiple implementations to
 	<dependency>
 		<groupId>com.namics.oss.java.binarystore</groupId>
 		<artifactId>java-binarystore</artifactId>
-		<version>1.0.0</version>
+		<version>1.1.0</version>
 	</dependency>
 	
 ### Requirements	
