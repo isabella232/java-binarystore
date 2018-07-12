@@ -24,6 +24,14 @@ public interface BinaryService {
 	Binary create();
 
 	/**
+	 * Create a new binary with a given id.
+	 *
+	 * @param id the given id
+	 * @return the created binary
+	 */
+	Binary create(String id);
+
+	/**
 	 * Get an existing with by unique idGenerator, input and output stream ready to read/write.
 	 *
 	 * @param id of binary to get
