@@ -11,11 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.SimpleFileVisitor;
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashSet;
 import java.util.Set;
@@ -88,10 +84,17 @@ public class BinaryServiceFilesystemImpl implements BinaryService {
 	@Override
 	public Binary create() {
 		String id = this.idGenerator.get();
+		return create(id);
+	}
+
+	@Override
+	public Binary create(String id) {
+		if (exist(id)) {
+			throw new IllegalArgumentException("A binary with id " + id + " already exists");
+		}
 		LOG.debug("Create file for id {}", id);
 		return mapBinary(buildFile(id), id);
 	}
-
 
 	@Override
 	public Binary get(String id) throws IllegalArgumentException {

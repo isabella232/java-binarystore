@@ -21,6 +21,7 @@ import java.io.OutputStream;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 import static com.google.common.collect.Iterables.toArray;
 import static org.hamcrest.Matchers.*;
@@ -164,5 +165,31 @@ public class BinaryServiceFilesystemImplTest {
         assertThat(new BinaryServiceFilesystemImpl(DIR, 10).buildPath(filename), equalTo("105/cbe/4c4/9f8/450/c92/450/b61/1d2/5d8/"));
         assertThat(new BinaryServiceFilesystemImpl(DIR, 15).buildPath(filename), equalTo("105/cbe/4c4/9f8/450/c92/450/b61/1d2/5d8/0c/"));
         new BinaryServiceFilesystemImpl(DIR, -1);
+    }
+
+    @Test
+    public void testCreateWithId() {
+        // Given
+        String id = UUID.randomUUID().toString();
+
+        // When
+        Binary binary = store.create(id);
+
+        // Then
+        assertThat(binary, hasProperty("id", equalTo(id)));
+    }
+
+    @Test
+    public void testCreateWithIdExpectIllegalArgumentException() {
+        // Given
+        Binary binary = store.create();
+
+        try {
+            // When
+            store.create(binary.getId());
+        } catch (IllegalArgumentException e) {
+            // Then
+            assertThat(e, hasProperty("message", equalTo("A binary with id " + binary.getId() + " already exists")));
+        }
     }
 }
